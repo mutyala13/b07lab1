@@ -67,12 +67,20 @@ public class Polynomial {
 		            String[] t_2 = t[j+i].split("x");
                             if(t_2.length == 0)
                                coff[j] = 1;
-                            else if(t_2[0]==null)
+                            else if(t_2[0].equals(""))
                             {
 		            coff[j] =1;
                             }
-                            else if(!(t_2[0].isEmpty()))
+                            else if(t_2[0].equals("-"))
                             {
+                            coff[j] =-1;
+                             }
+                            else if(t_2[0].equals("+"))
+                             {
+                              coff[j] =1;
+                              }
+                            else if(!(t_2[0].isEmpty()))
+                            { 
                               coff[j] = Double.parseDouble(t_2[0]);
 
                             } 
